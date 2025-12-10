@@ -1,50 +1,168 @@
-# Welcome to your Expo app 👋
+# 📱 Agadir Task Manager 2025
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Agadir Task Manager is a simple mobile application built to help users create, manage, and track their daily tasks. The project includes a **React Native (Expo)** frontend and a **Node.js + Express + Sequelize** backend connected to a **PostgreSQL** database.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Features
 
-   ```bash
-   npm install
-   ```
+### **Frontend (React Native + Expo Router)**
 
-2. Start the app
+* Login & Register screens
+* Dashboard showing all tasks
+* Add new task
+* Edit and delete tasks
+* Smooth navigation using Expo Router
+* Clean UI and responsive design
 
-   ```bash
-   npx expo start
-   ```
+### **Backend (Node.js + Express)**
 
-In the output, you'll find options to open the app in a
+* REST API for authentication and tasks
+* JWT authentication
+* Password hashing (bcrypt)
+* Sequelize ORM for PostgreSQL
+* Models: **User**, **Task**
+* CRUD endpoints for tasks
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🏗 Project Structure
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+Agadir-Task-Manager-2025/
+│
+├── backend/
+│   ├── src/
+│   │   ├── models/
+│   │   │   ├── user.js
+│   │   │   └── task.js
+│   │   ├── routes/
+│   │   │   ├── auth.js
+│   │   │   └── tasks.js
+│   │   └── server.js
+│   ├── package.json
+│   └── .env
+│
+└── frontend/
+    ├── app/
+    │   ├── index.jsx
+    │   ├── login.jsx
+    │   ├── dashboard.jsx
+    │   └── addTask.jsx
+    ├── package.json
+    └── app.json
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## ⚙️ Installation
 
-To learn more about developing your project with Expo, look at the following resources:
+### **1️⃣ Clone the repository**
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+git clone https://github.com/faskadev/Agadir-Task-Manager-2025.git
+cd Agadir-Task-Manager-2025
+```
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+# 🛠 Backend Setup
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### **2️⃣ Install dependencies**
+
+```bash
+cd backend
+npm install
+```
+
+### **3️⃣ Configure environment variables**
+
+Create a `.env` file:
+
+```
+PORT=3000
+DB_NAME=taskmanager
+DB_USER=postgres
+DB_PASS=your_password
+DB_HOST=localhost
+JWT_SECRET=supersecretkey
+```
+
+### **4️⃣ Run the backend**
+
+```bash
+npm start
+```
+
+---
+
+# 📱 Frontend Setup
+
+### **1️⃣ Install dependencies**
+
+```bash
+cd frontend
+npm install
+```
+
+### **2️⃣ Start Expo**
+
+```bash
+npx expo start
+```
+
+---
+
+# 🔗 REST API Endpoints
+
+## **Auth**
+
+| Method | Endpoint         | Description       |
+| ------ | ---------------- | ----------------- |
+| POST   | `/auth/register` | Register new user |
+| POST   | `/auth/login`    | Login and get JWT |
+
+## **Tasks**
+
+| Method | Endpoint     | Description     |
+| ------ | ------------ | --------------- |
+| GET    | `/tasks`     | Get all tasks   |
+| POST   | `/tasks`     | Create new task |
+| PUT    | `/tasks/:id` | Update task     |
+| DELETE | `/tasks/:id` | Delete task     |
+
+---
+
+# 🗄 UML & Technical Documentation
+
+All documentation is stored in:
+
+```
+/docs
+```
+
+Includes:
+
+* UML Diagrams
+* Database Schema
+* Technical Documentation
+* API Reference
+
+---
+
+# 🤝 Contributing
+
+Pull requests are welcome.
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+# ✨ Author
+
+**Faska Abdelmajide**
+GitHub: [https://github.com/faskadev](https://github.com/faskadev)
